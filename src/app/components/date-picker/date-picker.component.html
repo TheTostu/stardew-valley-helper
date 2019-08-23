@@ -1,0 +1,39 @@
+<div class="container">
+    <h2>Pick date</h2>
+    <form #dateForm="ngForm">
+        <div class="form-group">
+            <p>Day</p>
+            <input type="number" class="form-control" id="day" min="1" max="28" [(ngModel)]="date.day" name="day"
+                required>
+        </div>
+
+        <div class="form-group">
+            <p>Season</p>
+
+            <input type="radio" id="spring" name="drone" value="SPRING" name="season" [(ngModel)]="date.season">
+            <label for="spring"> Spring</label>
+            <br />
+            <input type="radio" id="summer" name="drone" value="SUMMER" name="season" [(ngModel)]="date.season">
+            <label for="summer"> Summer</label>
+            <br />
+            <input type="radio" id="autumn" name="drone" value="AUTUMN" name="season" [(ngModel)]="date.season">
+            <label for="autumn"> Autumn</label>
+            <br />
+            <input type="radio" id="winter" name="drone" value="WINTER" name="season" [(ngModel)]="date.season">
+            <label for="winter"> Winter</label>
+        </div>
+
+        <div class="form-group">
+            <p>Year</p>
+            <input type="number" class="form-control" id="day" min="1" name="year" [(ngModel)]="date.year" required>
+        </div>
+
+        <div>
+            {{weekDay | async}}
+        </div>
+        <div>
+            {{stringDate | async}}
+        </div>
+
+    </form>
+</div>
