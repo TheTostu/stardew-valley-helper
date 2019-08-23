@@ -1,19 +1,19 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { StardewDate, Season, WeekDay } from 'src/app/models/models';
-import { Observable } from 'rxjs';
-import { tap, map } from 'rxjs/operators';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { StardewDate, Season, WeekDay } from "src/app/models/models";
+import { Observable } from "rxjs";
+import { tap, map } from "rxjs/operators";
+import { NgForm } from "@angular/forms";
 
 @Component({
-  selector: 'app-date-picker',
-  templateUrl: './date-picker.component.html',
-  styleUrls: ['./date-picker.component.scss']
+  selector: "app-date-picker",
+  templateUrl: "./date-picker.component.html",
+  styleUrls: ["./date-picker.component.scss"]
 })
 export class DatePickerComponent implements OnInit {
 
   constructor() { }
 
-  @ViewChild('dateForm', { static: true }) dateForm: NgForm;
+  @ViewChild("dateForm", { static: true }) dateForm: NgForm;
 
   date: StardewDate;
 
@@ -21,7 +21,7 @@ export class DatePickerComponent implements OnInit {
   stringDate: Observable<string>;
 
   getStringDate(): string {
-    return `Day ${this.date.day} of ${this.date.season} Year ${this.date.year}.`
+    return `Day ${this.date.day} of ${this.date.season} Year ${this.date.year}.`;
   }
 
   getWeekDay(): string {

@@ -1,4 +1,4 @@
-import { Crop } from '../models/models';
+import { Crop } from "../models/models";
 
 export const CROPS_LIST: Crop[] = [
     {
