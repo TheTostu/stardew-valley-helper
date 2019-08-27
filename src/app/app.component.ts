@@ -5,13 +5,13 @@ import { Crop, StardewDate, Season } from './models/models';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   date: StardewDate = {
     day: 1,
     season: Season.SPRING,
-    year: 1
+    year: 1,
   };
 
   onDateChanged(date: StardewDate) {

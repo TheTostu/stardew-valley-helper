@@ -18,14 +18,14 @@ export class DatePickerComponent implements OnInit {
 
   date: StardewDate;
 
-  weekDay$: Observable<string>;
+  weekDay$: Observable<WeekDay>;
   stringDate$: Observable<string>;
 
   getStringDate(): string {
     return `Day ${this.date.day} of ${this.date.season} Year ${this.date.year}.`;
   }
 
-  getWeekDay(): string {
+  getWeekDay(): WeekDay {
     const weekDays = [
       WeekDay.MONDAY,
       WeekDay.TUESDAY,

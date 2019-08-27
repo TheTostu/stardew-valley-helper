@@ -12,13 +12,10 @@ import { FilterSeasonPipe } from './filter-season.pipe';
     AppComponent,
     DatePickerComponent,
     CropsListComponent,
-    FilterSeasonPipe
+    FilterSeasonPipe,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -8,8 +8,13 @@ import { FilterSeasonPipe } from './filter-season.pipe';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent, DatePickerComponent, CropsListComponent, FilterSeasonPipe],
-      imports: [FormsModule]
+      declarations: [
+        AppComponent,
+        DatePickerComponent,
+        CropsListComponent,
+        FilterSeasonPipe,
+      ],
+      imports: [FormsModule],
     }).compileComponents();
   }));
 

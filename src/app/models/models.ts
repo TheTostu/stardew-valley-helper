@@ -1,10 +1,22 @@
-export interface Crop {
+export interface CropObject {
     name: string;
     harvestTime: number;
     regrowthTime?: number;
     imgUrl: string;
     seedImgUrl: string;
     seasons: Season[];
+}
+
+export interface Crop extends CropObject {
+    status: CropStatus;
+}
+
+export enum CropStatus {
+    UNAQUIRED = 'UNAQUIRED',
+    SEEDED = 'SEEDED',
+    PLANTED = 'PLANTED',
+    HARVESTED = 'HARVESTED',
+    COMPLETED = 'COMPLETED',
 }
 
 export enum Season {

@@ -1,6 +1,6 @@
-import { Crop, Season } from '../models/models';
+import { CropObject, Season } from '../models/models';
 
-export const CROPS_LIST: Crop[] = [
+export const CROPS_LIST: CropObject[] = [
   // SPRING
     {
         name: 'Blue Jazz',
