@@ -1,0 +1,13 @@
+<div>
+  <p>List of plants with states</p>
+  <p>seed / in the ground</p>
+  <p>days to grow</p>
+
+  <p>
+    <li *ngFor="let crop of crops | filterSeason:date.season">
+      {{crop.name}}
+      <img [src]="crop.imgUrl" alt="{{crop.name}} Picture"/>
+    </li>
+
+    </p>
+</div>

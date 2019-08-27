@@ -4,23 +4,24 @@ export interface Crop {
     regrowthTime?: number;
     imgUrl: string;
     seedImgUrl: string;
+    seasons: Season[];
 }
 
 export enum Season {
-    SPRING = "SPRING",
-    SUMMER = "SUMMER",
-    AUTUMN = "AUTUMN",
-    WINTER = "WINTER",
+    SPRING = 'SPRING',
+    SUMMER = 'SUMMER',
+    AUTUMN = 'AUTUMN',
+    WINTER = 'WINTER',
 }
 
 export enum WeekDay {
-    MONDAY = "MONDAY",
-    TUESDAY = "TUESDAY",
-    WEDNESDAY = "WEDNESDAY",
-    THURSDAY = "THURSDAY",
-    FRIDAY = "FRIDAY",
-    SATURDAY = "SATURDAY",
-    SUNDAY = "SUNDAY",
+    MONDAY = 'MONDAY',
+    TUESDAY = 'TUESDAY',
+    WEDNESDAY = 'WEDNESDAY',
+    THURSDAY = 'THURSDAY',
+    FRIDAY = 'FRIDAY',
+    SATURDAY = 'SATURDAY',
+    SUNDAY = 'SUNDAY',
 }
 
 export interface StardewDate {

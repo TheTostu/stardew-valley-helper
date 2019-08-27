@@ -1,17 +1,8 @@
 <h1>Stardew Valley Helper</h1>
 
-<app-date-picker></app-date-picker>
-
-<div>
-  <p>List of plants with states</p>
-  <p>seed / in the ground</p>
-  <p>days to grow</p>
-
-  <p>
-    <li *ngFor="let crop of crops">
-      {{crop.name}}
-      <img [src]="crop.imgUrl"/>
-    </li>
-
-    </p>
-</div>
+<app-date-picker
+  (dateChanged)="onDateChanged($event)">
+</app-date-picker>
+<app-crops-list
+  [date]="date">
+</app-crops-list>

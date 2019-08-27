@@ -1,10 +1,10 @@
-import { Injectable } from "@angular/core";
-import { Crop } from "../models/models";
-import { CROPS_LIST } from "../data/crops";
-import { of, Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { Crop, Season } from '../models/models';
+import { CROPS_LIST } from '../data/crops';
+import { of, Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class CropsService {
 
