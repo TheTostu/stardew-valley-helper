@@ -4,10 +4,17 @@
   <p>days to grow</p>
 
   <p>
-    <li *ngFor="let crop of crops | filterSeason:date.season">
-      {{crop.name}}
-      <img [src]="crop.imgUrl" alt="{{crop.name}} Picture"/>
+    <li *ngFor="let crop of crops | filterSeason: date.season">
+      {{ crop.name }}
+      <img
+        src="{{
+          crop.status == CropStatus.UNAQUIRED ||
+          crop.status == CropStatus.SEED
+            ? crop.seedImgUrl
+            : crop.imgUrl
+        }}"
+        alt="{{ crop.name }} Picture"
+      />
     </li>
-
-    </p>
+  </p>
 </div>

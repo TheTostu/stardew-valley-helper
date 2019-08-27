@@ -1,17 +1,18 @@
 import { Component, OnInit, Input, SimpleChange } from '@angular/core';
 import { CropsService } from 'src/app/services/crops.service';
-import { Crop, StardewDate } from 'src/app/models/models';
+import { Crop, CropStatus, StardewDate } from 'src/app/models/models';
 
 @Component({
   selector: 'app-crops-list',
   templateUrl: './crops-list.component.html',
-  styleUrls: ['./crops-list.component.scss']
+  styleUrls: ['./crops-list.component.scss'],
 })
 export class CropsListComponent implements OnInit {
   constructor(private cropsService: CropsService) {}
 
   crops: Crop[];
-  title = 'stardew-valley-helper';
+
+  readonly CropStatus = CropStatus;
 
   @Input() date: StardewDate;
 

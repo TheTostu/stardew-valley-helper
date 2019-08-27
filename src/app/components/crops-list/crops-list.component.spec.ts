@@ -10,7 +10,7 @@ describe('CropsListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CropsListComponent, FilterSeasonPipe]
+      declarations: [CropsListComponent, FilterSeasonPipe],
     }).compileComponents();
   }));
 
