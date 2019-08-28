@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, SimpleChange } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CropsService } from 'src/app/services/crops.service';
 import { Crop, CropStatus, StardewDate } from 'src/app/models/models';
+
 
 @Component({
   selector: 'app-crops-list',

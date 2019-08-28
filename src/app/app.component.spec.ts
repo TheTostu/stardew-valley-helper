@@ -1,9 +1,11 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { DatePickerComponent } from './components/date-picker/date-picker.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CropsListComponent } from './components/crops-list/crops-list.component';
-import { FilterSeasonPipe } from './filter-season.pipe';
+import { FilterSeasonPipe } from './pipes/filter-season.pipe';
+import { FormatDatePipe } from './pipes/format-date.pipe';
+import { WeekDayPipe } from './pipes/week-day.pipe';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -13,8 +15,10 @@ describe('AppComponent', () => {
         DatePickerComponent,
         CropsListComponent,
         FilterSeasonPipe,
+        FormatDatePipe,
+        WeekDayPipe,
       ],
-      imports: [FormsModule],
+      imports: [FormsModule, ReactiveFormsModule],
     }).compileComponents();
   }));
 

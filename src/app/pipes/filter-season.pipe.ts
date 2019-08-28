@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Crop, Season } from './models/models';
+import { Crop, Season } from '../models/models';
 
 @Pipe({
   name: 'filterSeason',

@@ -10,7 +10,7 @@ before_script:
   - npm install -g @angular/cli
 
 script:
-  - ng lint
+  - npm run lint
   - npm run test-headless
   - ng build --prod --base-href https://thetostu.github.io/stardew-valley-helper/
 
