@@ -1,7 +1,12 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
 
+import { debounceTime, distinct, distinctUntilChanged } from 'rxjs/operators';
 import { Season, StardewDate } from 'src/app/models/models';
+
+import { StardewReducers } from '../../+state';
+import { changeDateAction } from '../../+state/date-picker/date-picker.actions';
 
 @Component({
   selector: 'app-date-picker',
@@ -9,11 +14,8 @@ import { Season, StardewDate } from 'src/app/models/models';
   styleUrls: ['./date-picker.component.scss'],
 })
 export class DatePickerComponent implements OnInit {
-  constructor() {}
-
+  constructor(private store: Store<StardewReducers>) {}
   readonly Season = Season;
-
-  @Output() dateChanged = new EventEmitter<StardewDate>();
 
   dateForm = new FormGroup({
     day: new FormControl(1, [
@@ -27,5 +29,14 @@ export class DatePickerComponent implements OnInit {
 
   date: StardewDate;
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.dateForm.valueChanges
+      .pipe(
+        debounceTime(500),
+        distinctUntilChanged()
+      )
+      .subscribe(next => {
+        this.store.dispatch(changeDateAction({ date: this.dateForm.value }));
+      });
+  }
 }
