@@ -29,7 +29,6 @@
     "no-debugger": true,
     "no-duplicate-super": true,
     "no-empty": false,
-    "no-empty-interface": true,
     "no-eval": true,
     "no-inferrable-types": [true, "ignore-params"],
     "no-misused-new": true,
@@ -49,7 +48,7 @@
         "groups": [
           {
             "name": "Angular",
-            "match": "^@angular",
+            "match": "^@",
             "order": 1
           },
           {
