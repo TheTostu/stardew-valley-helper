@@ -8,8 +8,7 @@
       {{ crop.name }}
       <img
         src="{{
-          crop.status == CropStatus.UNAQUIRED ||
-          crop.status == CropStatus.SEED
+          crop.status == CropStatus.UNAQUIRED || crop.status == CropStatus.SEED
             ? crop.seedImgUrl
             : crop.imgUrl
         }}"

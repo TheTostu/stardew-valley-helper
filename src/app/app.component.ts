@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
+import { Crop, Season, StardewDate } from './models/models';
 import { CropsService } from './services/crops.service';
-import { Crop, StardewDate, Season } from './models/models';
 
 @Component({
   selector: 'app-root',

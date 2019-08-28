@@ -1,20 +1,13 @@
 {
-  "extends": [
-    "tslint-plugin-prettier"
-  ],
+  "extends": ["tslint-plugin-prettier", "tslint-config-prettier"],
   "rules": {
-    "prettier": [
-      true,
-      "./.prettierrc"
-    ],
+    "prettier": [true, "./.prettierrc"],
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,
     "deprecation": true,
     "forin": true,
-    "import-blacklist": [
-      true
-    ],
+    "import-blacklist": [true],
     "max-line-length": [true, 120],
     "interface-over-type-literal": true,
     "member-access": false,
@@ -31,24 +24,14 @@
     ],
     "no-arg": true,
     "no-bitwise": true,
-    "no-console": [
-      true,
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace"
-    ],
+    "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
     "no-construct": true,
     "no-debugger": true,
     "no-duplicate-super": true,
     "no-empty": false,
     "no-empty-interface": true,
     "no-eval": true,
-    "no-inferrable-types": [
-      true,
-      "ignore-params"
-    ],
+    "no-inferrable-types": [true, "ignore-params"],
     "no-misused-new": true,
     "no-non-null-assertion": true,
     "no-shadowed-variable": true,
@@ -59,13 +42,33 @@
     "no-unused-expression": true,
     "no-var-keyword": true,
     "object-literal-sort-keys": false,
+    "ordered-imports": [
+      true,
+      {
+        "grouped-imports": true,
+        "groups": [
+          {
+            "name": "Angular",
+            "match": "^@angular",
+            "order": 1
+          },
+          {
+            "name": "absolute_paths",
+            "match": "^[a-zA-Z]",
+            "order": 2
+          },
+          {
+            "name": "relative_paths",
+            "match": "^[.][.]?",
+            "order": 3
+          }
+        ]
+      }
+    ],
     "prefer-const": true,
     "radix": true,
     "no-parameter-reassignment": true,
-    "triple-equals": [
-      true,
-      "allow-null-check"
-    ],
+    "triple-equals": [true, "allow-null-check"],
     "unified-signatures": true,
     "variable-name": false
   }

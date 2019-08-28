@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Crop, CropStatus } from '../models/models';
+
+import { Observable, of } from 'rxjs';
+
 import { CROPS_LIST } from '../data/crops';
-import { of, Observable } from 'rxjs';
+import { Crop, CropStatus } from '../models/models';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +13,7 @@ export class CropsService {
 
   getCrops(): Observable<Crop[]> {
     return of(
-      CROPS_LIST.map(crop => ({ ...crop, status: CropStatus.UNAQUIRED })),
+      CROPS_LIST.map(crop => ({ ...crop, status: CropStatus.UNAQUIRED }))
     );
   }
 }

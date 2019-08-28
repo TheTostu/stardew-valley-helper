@@ -1,8 +1,9 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { DatePickerComponent } from './components/date-picker/date-picker.component';
+import { async, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
 import { CropsListComponent } from './components/crops-list/crops-list.component';
+import { DatePickerComponent } from './components/date-picker/date-picker.component';
 import { FilterSeasonPipe } from './pipes/filter-season.pipe';
 import { FormatDatePipe } from './pipes/format-date.pipe';
 import { WeekDayPipe } from './pipes/week-day.pipe';

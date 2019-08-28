@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { DatePickerComponent } from './date-picker.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { FormatDatePipe } from '../../pipes/format-date.pipe';
 import { WeekDayPipe } from '../../pipes/week-day.pipe';
+import { DatePickerComponent } from './date-picker.component';
 
 describe('DatePickerComponent', () => {
   let component: DatePickerComponent;
