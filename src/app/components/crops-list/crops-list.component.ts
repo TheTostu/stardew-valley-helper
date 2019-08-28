@@ -1,7 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 import { Crop, CropStatus, StardewDate } from 'src/app/models/models';
 import { CropsService } from 'src/app/services/crops.service';
+
+import { StardewState } from '../../+state';
+import { addItems } from '../../+state/crops-list/crops-list.action';
+import {
+  selectCropsBySeason,
+  selectCropsList,
+} from '../../+state/crops-list/crops-list.selector';
 
 @Component({
   selector: 'app-crops-list',
@@ -9,15 +17,16 @@ import { CropsService } from 'src/app/services/crops.service';
   styleUrls: ['./crops-list.component.scss'],
 })
 export class CropsListComponent implements OnInit {
-  constructor(private cropsService: CropsService) {}
-
-  crops: Crop[];
+  constructor(
+    private cropsService: CropsService,
+    private store: Store<StardewState>
+  ) {}
 
   readonly CropStatus = CropStatus;
 
-  @Input() date: StardewDate;
+  selectCropsBySeason$ = this.store.select(selectCropsBySeason);
 
   ngOnInit() {
-    this.cropsService.getCrops().subscribe(crops => (this.crops = crops));
+    this.store.dispatch(addItems({ crops: this.cropsService.getCrops() }));
   }
 }

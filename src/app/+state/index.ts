@@ -1,21 +1,20 @@
-import {
-  ActionReducer,
-  ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
-  MetaReducer,
-} from '@ngrx/store';
+import { ActionReducerMap } from '@ngrx/store';
 
-import { environment } from '../../environments/environment';
+import {
+  cropsListReducer,
+  CropsListState,
+} from './crops-list/crops-list.reducer';
 import {
   datePickerReducer,
   DatePickerState,
 } from './date-picker/date-picker.reducer';
 
-export interface StardewReducers {
+export interface StardewState {
   datePicker: DatePickerState;
+  cropsList: CropsListState;
 }
 
-export const stardewReducers: ActionReducerMap<StardewReducers, any> = {
+export const stardewReducers: ActionReducerMap<StardewState, any> = {
   datePicker: datePickerReducer,
+  cropsList: cropsListReducer,
 };

@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { debounceTime, distinct, distinctUntilChanged } from 'rxjs/operators';
 import { Season, StardewDate } from 'src/app/models/models';
 
-import { StardewReducers } from '../../+state';
+import { StardewState } from '../../+state';
 import { changeDateAction } from '../../+state/date-picker/date-picker.actions';
 
 @Component({
@@ -14,7 +14,7 @@ import { changeDateAction } from '../../+state/date-picker/date-picker.actions';
   styleUrls: ['./date-picker.component.scss'],
 })
 export class DatePickerComponent implements OnInit {
-  constructor(private store: Store<StardewReducers>) {}
+  constructor(private store: Store<StardewState>) {}
   readonly Season = Season;
 
   dateForm = new FormGroup({

@@ -3,8 +3,8 @@
   <p>seed / in the ground</p>
   <p>days to grow</p>
 
-  <p>
-    <li *ngFor="let crop of crops | filterSeason: date.season">
+  <ul>
+    <li *ngFor="let crop of selectCropsBySeason$ | async">
       {{ crop.name }}
       <img
         src="{{
@@ -15,5 +15,5 @@
         alt="{{ crop.name }} Picture"
       />
     </li>
-  </p>
+  </ul>
 </div>
